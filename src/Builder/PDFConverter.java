@@ -1,8 +1,8 @@
 package Builder;
 
-public class ASCIIConverter extends Converter {
+public class PDFConverter extends Converter{
 
-    public ASCIIConverter(String document) {
+    public PDFConverter(String document) {
         super(document);
     }
 
