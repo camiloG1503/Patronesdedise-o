@@ -12,5 +12,9 @@ public class EjecutarBuilderPattern {
         Reader objLector1 = new Reader(null, objDocumento1);
         Reader objLector2 = new Reader(null, objDocumento2);
         Reader objLector3 = new Reader(null, objDocumento3);
+
+        objLector1.parseInput();
+        objLector2.parseInput();
+        objLector3.parseInput();
     }
 }
