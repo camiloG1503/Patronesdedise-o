@@ -11,4 +11,16 @@ public class Converter {
     public void mainLines(){
         System.out.println();
     }
+
+    public void makeParagraph(){
+        System.out.println();
+    }
+
+    public void makeTable(){
+        System.out.println();
+    }
+
+    public String getDocument(){
+        return document;
+    }
 }
