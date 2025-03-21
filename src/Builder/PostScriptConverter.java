@@ -1,8 +1,8 @@
 package Builder;
 
-public class ASCIIConverter extends Converter {
+public class PostScriptConverter extends Converter{
 
-    public ASCIIConverter(String document) {
+    public PostScriptConverter(String document){
         super(document);
     }
 
