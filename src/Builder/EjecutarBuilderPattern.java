@@ -9,9 +9,9 @@ public class EjecutarBuilderPattern {
         Converter objDocumento3 = new PDFConverter("La odisea");
 
 
-        Reader objLector1 = new Reader(null, objDocumento1);
-        Reader objLector2 = new Reader(null, objDocumento2);
-        Reader objLector3 = new Reader(null, objDocumento3);
+        Reader objLector1 = new Reader("LINE", objDocumento1);
+        Reader objLector2 = new Reader("PARAGRAPH", objDocumento2);
+        Reader objLector3 = new Reader("TABLE", objDocumento3);
 
         objLector1.parseInput();
         objLector2.parseInput();
