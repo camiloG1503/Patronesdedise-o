@@ -6,15 +6,15 @@ public class ASCIIConverter extends Converter {
         super(document);
     }
 
-    public void makeLine(){
-        System.out.println("Línea con ASCIIConverter");
+    public void mainLines(){
+        System.out.println();
     }
 
     public void makeParagraph(){
-        System.out.println("Párrafo con ASCIIConverter");
+        System.out.println();
     }
 
     public void makeTable(){
-        System.out.println("Tabla con ASCIIConverter");
+        System.out.println();
     }
 }
