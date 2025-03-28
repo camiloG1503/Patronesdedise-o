@@ -1,7 +1,7 @@
 package ProtoTyoe;
 
 public class Harry implements Person{
-    private final String name = "Harry";
+    private final String NAME = "Harry";
 
     @Override
     public Person clone() {
@@ -10,7 +10,7 @@ public class Harry implements Person{
 
     @Override
     public String toString() {
-        return name;
+        return NAME;
     }
 }
 
