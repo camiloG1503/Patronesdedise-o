@@ -1,28 +1,42 @@
 package Quiz;
+
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.List;
 
+/**
+ * Representa un pedido realizado por un cliente.
+ * Un pedido puede contener múltiples productos.
+ */
 public class Pedido {
-    private Cliente cliente;
-    private ArrayList<Producto> productos;
-    private Date fecha;
-    private int numeroTarjetaCredito;
+    private Cliente cliente; // Cliente que realiza el pedido
+    private List<Producto> productos; // Lista de productos en el pedido
 
-    public Pedido(Cliente cliente, int numeroTarjetaCredito) {
+    /**
+     * Construye un nuevo objeto Pedido.
+     *
+     * @param cliente El cliente que realiza el pedido.
+     */
+    public Pedido(Cliente cliente) {
         this.cliente = cliente;
-        this.numeroTarjetaCredito = numeroTarjetaCredito;
-        this.fecha = new Date();
         this.productos = new ArrayList<>();
     }
 
+    /**
+     * Agrega un producto al pedido.
+     *
+     * @param producto El producto a agregar.
+     */
     public void agregarProducto(Producto producto) {
         productos.add(producto);
     }
 
-    public void mostrarPedido() {
-        System.out.println("Pedido de: " + cliente.getNombre());
-        System.out.println("Fecha: " + fecha);
-        System.out.println("Productos");
+    /**
+     * Muestra los detalles del pedido, incluyendo los detalles del cliente
+     * y de los productos en el pedido.
+     */
+    public void mostrarDetalles() {
+        System.out.println("Detalles del Pedido:");
+        cliente.mostrarDetalles();
         for (Producto producto : productos) {
             producto.mostrarDetalles();
         }
