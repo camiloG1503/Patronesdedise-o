@@ -1,29 +1,32 @@
 package Quiz;
 
-import java.util.Date;
-
+/**
+ * Clase principal que sirve como punto de entrada para la aplicación.
+ * Demuestra la creación de un cliente, productos (cámara e impresión),
+ * y un pedido que incluye estos productos.
+ */
 public class Main {
     public static void main(String[] args) {
+        // Crear un cliente
+        Cliente cliente = new Cliente("1503468", "Camilo Gómez");
 
-        Cliente objCliente = new Cliente("115021", "Juan Perez");
-        objCliente.mostrarDetalles();
+        // Crear productos usando la fábrica
+        Producto camara = ProductoFactory.crearProducto("camara", 1, "Canon", "EOS R5");
+        Producto impresion = ProductoFactory.crearProducto("impresion", 2, "Color", "");
 
-        // Pedido de impresión a blanco y negro
-        ProductoFactory fabricaImpresion = new ImpresionFactory("Blanco y Negro");
-        Producto impresion = fabricaImpresion.crearProducto(301);
-
+        // Agregar fotos al producto de impresión
         if (impresion instanceof Impresion) {
-            Impresion impresionCast = (Impresion) impresion;
-            impresionCast.agregarFoto(new Foto("rick_sanchez.jpg"));
-            impresionCast.agregarFoto(new Foto("obama.jpg"));
+            Impresion imp = (Impresion) impresion;
+            imp.agregarFoto(new Foto("rick_sanchez.jpg"));
+            imp.agregarFoto(new Foto("morty.jpg"));
         }
 
-        // Pedido de cámara
-        ProductoFactory fabricaCamara = new CamaraFactory("Nikon", "D3500");
-        Producto camara = fabricaCamara.crearProducto(302);
+        // Crear un pedido y agregar productos
+        Pedido pedido = new Pedido(cliente, 123456);
+        pedido.agregarProducto(camara);
+        pedido.agregarProducto(impresion);
 
-        // Mostrar detalles de los pedidos
-        impresion.mostrarDetalles();
-        camara.mostrarDetalles();
+        // Mostrar los detalles del pedido
+        pedido.mostrarPedido();
     }
 }
